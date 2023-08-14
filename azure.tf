@@ -1,25 +1,23 @@
 terraform {
   required_providers {
     azurerm = {
-      source  = "hashicorp/azurerm"
+      source = "hashicorp/azurerm"
       version = "=3.0.0"
     }
   }
 }
 
-# Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
   subscription_id = ""
-   client_id = ""
-   client_secret = ""
-   tenant_id  = ""
+  client_id       = ""
+  client_secret   = ""
+  tenant_id       = ""
 }
 
-
 resource "azurerm_resource_group" "main" {
-  name     = "azvm"
-  location = "eastus"
+  name = "DemoRG"
+  location = "East US"
 }
 
 resource "azurerm_virtual_network" "azvm_main" {
@@ -53,8 +51,8 @@ resource "azurerm_linux_virtual_machine" "azvm_main" {
   resource_group_name             = azurerm_resource_group.main.name
   location                        = "eastus"
   size                            = "Standard_D2s_v3"
-  admin_username                  = ""
-  admin_password                  = ""
+  admin_username                  = "MultiCloud"
+  admin_password                  = "Dmuluri@98"
   disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.azni_main.id,
