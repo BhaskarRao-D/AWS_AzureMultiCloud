@@ -1,3 +1,10 @@
+provider "aws" {
+
+  region     = ""
+  access_key = ""
+  secret_key = ""
+}
+
 resource "aws_instance" "aws_ec2" {
 
   ami                         = "ami-09538990a0c4fe9be"
