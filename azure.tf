@@ -51,8 +51,8 @@ resource "azurerm_linux_virtual_machine" "azvm_main" {
   resource_group_name             = azurerm_resource_group.main.name
   location                        = "eastus"
   size                            = "Standard_D2s_v3"
-  admin_username                  = "MultiCloud"
-  admin_password                  = "Dmuluri@98"
+  admin_username                  = ""
+  admin_password                  = ""
   disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.azni_main.id,
